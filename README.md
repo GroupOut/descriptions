@@ -11,9 +11,9 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+1.  [Usage](#Usage)
+1.  [Requirements](#requirements)
+1.  [Development](#development)
 
 ## Usage
 
@@ -37,3 +37,6 @@ npm install -g webpack
 npm install
 ```
 
+## Database Structure
+
+![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptions.png);
