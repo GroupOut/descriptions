@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-- https://github.com/GroupOut/GroupOutJensProxy
-- https://github.com/GroupOut/deal-info
-- https://github.com/GroupOut/gallery
-- https://github.com/GroupOut/reviews
+  - https://github.com/GroupOut/GroupOutJensProxy
+  - https://github.com/GroupOut/deal-info
+  - https://github.com/GroupOut/gallery
+  - https://github.com/GroupOut/reviews
 
 ## Table of Contents
 
