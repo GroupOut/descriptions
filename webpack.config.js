@@ -2,10 +2,11 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
+  mode: 'development',
   context: __dirname + "/client",
   entry: "./index.js",
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
