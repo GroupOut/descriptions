@@ -4,16 +4,16 @@
 
 ## Related Projects
 
-  - https://github.com/GroupOut/GroupOutJensProxy
-  - https://github.com/GroupOut/deal-info
-  - https://github.com/GroupOut/gallery
-  - https://github.com/GroupOut/reviews
+- https://github.com/GroupOut/GroupOutJensProxy
+- https://github.com/GroupOut/deal-info
+- https://github.com/GroupOut/gallery
+- https://github.com/GroupOut/reviews
 
 ## Table of Contents
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+1.  [Usage](#Usage)
+1.  [Requirements](#requirements)
+1.  [Development](#development)
 
 ## Usage
 
@@ -36,4 +36,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
