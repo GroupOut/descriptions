@@ -15,7 +15,8 @@ jobs:
       # - run: npm cache clean
       # - run: rm -rf node_modules package-lock.json
       # - run: sudo npm install -g npm
-      # - run: npm install
+      - run: npm i uninstall-all-modules
+      - run: npm install
       - run: npm test
 
 
