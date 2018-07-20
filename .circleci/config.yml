@@ -12,10 +12,10 @@ jobs:
     working_directory: ~/descriptions/
 
     steps:
-      - run: npm cache clean
-      - run: rm -rf node_modules package-lock.json
-      - run: sudo npm install -g npm
-      - run: npm install
+      # - run: npm cache clean
+      # - run: rm -rf node_modules package-lock.json
+      # - run: sudo npm install -g npm
+      # - run: npm install
       - run: npm test
 
 
