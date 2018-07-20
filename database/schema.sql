@@ -1,17 +1,17 @@
 
-DROP DATABASE IF EXISTS descriptions;
+DROP DATABASE IF EXISTS description;
 
-CREATE DATABASE descriptions;
+CREATE DATABASE description;
 
-USE descriptions;
+USE description;
 
-CREATE TABLE merchants (
+CREATE TABLE merchant (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   name VARCHAR(120),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE locations (
+CREATE TABLE location (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   addr_ln1 VARCHAR(255),
   addr_ln2 VARCHAR(255),
@@ -24,20 +24,20 @@ CREATE TABLE locations (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE categories (
+CREATE TABLE category (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   name VARCHAR(120),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE deal_cat_joins (
+CREATE TABLE deal_cat_join (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  deal_id INTEGER REFERENCES deals(id),
-  cat_id INTEGER REFERENCES categories(id),
+  deal_id INTEGER REFERENCES deal(id),
+  cat_id INTEGER REFERENCES category(id),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE deals (
+CREATE TABLE deal (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   name VARCHAR(255),
   merch_id INTEGER REFERENCES (id),
@@ -47,11 +47,11 @@ CREATE TABLE deals (
   inclusions TEXT,
   exclusions TEXT,
   fine_print TEXT,
-  deal_cat_id INTEGER REFERENCES deal_cat_joins(deal_id),
+  deal_cat_id INTEGER REFERENCES deal_cat_join(deal_id),
   PRIMARY KEY (id)
 );
 
-INSERT INTO merchants
+INSERT INTO merchant
 VALUES (
   1,
   'River Otter Tours'
