@@ -13,7 +13,8 @@ jobs:
 
     steps:
       - run: npm cache clean
-      - run: sudo npm install -g npm
+      # - run: sudo npm install -g npm
+      # - run: rm -rf node_modules package-lock.json
       - run: npm install
       - run: npm test
 
