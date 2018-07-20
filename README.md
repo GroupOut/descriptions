@@ -36,3 +36,7 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
+## Database Structure
+
+![Descriptions Database Entity Relationship Diagram](./images/descriptions_ERD_v1.1.png);
