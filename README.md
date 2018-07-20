@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/GroupOut/GroupOutJensProxy
-  - https://github.com/GroupOut/deal-info
-  - https://github.com/GroupOut/gallery
-  - https://github.com/GroupOut/reviews
+- https://github.com/GroupOut/GroupOutJensProxy
+- https://github.com/GroupOut/deal-info
+- https://github.com/GroupOut/gallery
+- https://github.com/GroupOut/reviews
 
 ## Table of Contents
 
@@ -39,4 +39,4 @@ npm install
 
 ## Database Structure
 
-![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptions.png);
+![Descriptions Database Entity Relationship Diagram](./images/descriptions_ERD_v1.1.png);
