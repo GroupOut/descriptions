@@ -30,7 +30,7 @@ CREATE TABLE location (
 
 CREATE TABLE category (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  name VARCHAR(120),
+  name VARCHAR(120) NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -40,14 +40,14 @@ CREATE TABLE category (
 
 CREATE TABLE deal (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  name VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
   merch_id INTEGER UNSIGNED NOT NULL,
   loc_id INTEGER UNSIGNED NOT NULL,
-  descrip TEXT,
+  descrip TEXT NOT NULL,
   addl_info TEXT,
   inclusions TEXT,
   exclusions TEXT,
-  fine_print TEXT,
+  fine_print TEXT NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (merch_id) REFERENCES merchant (id),
   FOREIGN KEY (loc_id) REFERENCES location(id)
