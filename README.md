@@ -1,6 +1,7 @@
 # Project Name
 
-> Project description
+> Presents product descriptions using a RESTful API
+> on a server running Node Express to access a MySQL database.
 
 ## Related Projects
 
