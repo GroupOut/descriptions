@@ -15,7 +15,8 @@
   "scripts": {
     "lint": "eslint '**/*.{js,jsx}' --quiet",
     "format": "prettier --write '**/*.{js,jsx}'",
-    "bd": "webpack -d --watch"
+    "bd": "webpack -d --watch",
+    "test": "jest"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
