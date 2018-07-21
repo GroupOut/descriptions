@@ -155,7 +155,7 @@ INSERT INTO category (name) VALUES ("Sightseeing & Tours");
 INSERT INTO category (name) VALUES ("Kids Activities");
 INSERT INTO category (name) VALUES ("Tickets & Events");
 INSERT INTO category (name) VALUES ("Sports & Outdoors");
-INSERT INTO category (name) VALUES ("Nightlife);");
+INSERT INTO category (name) VALUES ("Nightlife");
 
 -- location table
 INSERT INTO location VALUES 
