@@ -40,4 +40,4 @@ npm install
 
 ## Database Structure
 
-![Descriptions Database Entity Relationship Diagram](./images/descriptions_ERD_v1.1.png);
+![Descriptions Database Entity Relationship Diagram](./images/descriptions_ERD_v1.3.png);
