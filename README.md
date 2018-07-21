@@ -1,7 +1,7 @@
 # Project Name
 
 > Presents product descriptions using a RESTful API
-> on a server running Node Express to access a MySQL database.
+> on a Node Express server querying a MySQL database.
 
 ## Related Projects
 
@@ -40,4 +40,4 @@ npm install
 
 ## Database Structure
 
-![Descriptions Database Entity Relationship Diagram](./images/descriptions_ERD_v1.1.png);
+![Descriptions Database Entity Relationship Diagram](./images/descriptions_ERD_v1.3.png);
