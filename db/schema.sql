@@ -11,17 +11,17 @@ USE descriptions;
 
 CREATE TABLE merchant (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  name VARCHAR(120),
+  name VARCHAR(120) NOT NULL,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE location (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  addr_ln1 VARCHAR(255),
+  addr_ln1 VARCHAR(255) NOT NULL,
   addr_ln2 VARCHAR(255),
-  city VARCHAR(120),
-  state_abbr CHAR(2),
-  zip CHAR(2),
+  city VARCHAR(120) NOT NULL,
+  state_abbr CHAR(2) NOT NULL,
+  zip CHAR(5) NOT NULL,
   lat DECIMAL(10,7),
   lon DECIMAL(10,7),
   gp_id VARCHAR(255),
