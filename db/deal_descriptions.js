@@ -42,15 +42,15 @@ const getDescriptionData = (dealId, callback) => {
   );
 };
 
-getDescriptionData(25, (e, s) => console.log(s));
+// getDescriptionData(25, (e, s) => console.log(s));
 
-const dealTableRecordCount = () => {
+const dealTableRecordCount = (callback) => {
   connection.query('SELECT * from deal', (error, results, fields) => {
     if (error) throw error;
-    console.log('The deal table contains', results.length, 'records.');
+    callback(null, results);
   });
 };
-dealTableRecordCount();
+dealTableRecordCount((e, s) => console.log('The deal table contains', s.length, 'records.'));
 
 connection.end();
 
