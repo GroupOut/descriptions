@@ -11,7 +11,7 @@ connection.connect(err => {
   if (err) {
     console.log('problem connecting to mysql', err);
   } else {
-    console.log('connected to mysql!');
+    console.log('connected to mysql descriptions_db!');
   }
 });
 
