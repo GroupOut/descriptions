@@ -2,7 +2,7 @@ const path = require('path');
 
 const connection = require(path.join(__dirname, 'index.js'));
 
-const getAll = (dealId, callback) => {
+const getDescriptionData = (dealId, callback) => {
   connection.query(
     `
       SELECT 
@@ -41,7 +41,7 @@ const getAll = (dealId, callback) => {
   );
 };
 
-getAll(25, (e, s) => console.log(s));
+getDescriptionData(25, (e, s) => console.log(s));
 
 const dealTableRecordCount = () => {
   connection.query('SELECT * from deal', (error, results, fields) => {
@@ -52,3 +52,8 @@ const dealTableRecordCount = () => {
 dealTableRecordCount();
 
 connection.end();
+
+module.exports = {
+  getDescriptionData,
+  dealTableRecordCount,
+};
