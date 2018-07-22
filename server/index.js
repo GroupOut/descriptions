@@ -18,6 +18,9 @@ app.use('/deal/:deal_id/description', (req, res, next) => {
   next();
 });
 
+// serve static page
+app.use(express.static(path.join(__dirname, '../public')));
+
 // respond to global endpoint hits
 app.get('/', (req, res) => {
   res.send('Hello World');
