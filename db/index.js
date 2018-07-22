@@ -15,15 +15,4 @@ connection.connect(err => {
   }
 });
 
-// const dealTableRecordCount = () => {
-//   connection.query('SELECT * from deal', (error, results, fields) => {
-//     if (error) throw error;
-//     console.log('The deal table contains', results.length, 'records.');
-//   });
-// };
-// dealTableRecordCount();
-
-// connection.end();
-
 module.exports = connection;
-// dealTableRecordCount,
