@@ -35,8 +35,9 @@ const getDescriptionData = (dealId, callback) => {
     (error, result, fields) => {
       if (error) {
         console.log('database query error');
+      } else {
+        callback(null, result);
       }
-      callback(null, result);
     },
   );
 };
