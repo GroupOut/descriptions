@@ -7,11 +7,23 @@ const connection = mysql.createConnection({
   database: 'descriptions',
 });
 
-connection.connect();
-
-connection.query('SELECT * from deal', (error, results, fields) => {
-  if (error) throw error;
-  console.log('The solution is: ', results);
+connection.connect(err => {
+  if (err) {
+    console.log('problem connecting to mysql', err);
+  } else {
+    console.log('connected to mysql!');
+  }
 });
 
-connection.end();
+// const dealTableRecordCount = () => {
+//   connection.query('SELECT * from deal', (error, results, fields) => {
+//     if (error) throw error;
+//     console.log('The deal table contains', results.length, 'records.');
+//   });
+// };
+// dealTableRecordCount();
+
+// connection.end();
+
+module.exports = connection;
+// dealTableRecordCount,
