@@ -1,18 +1,20 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
+const db = require(path.join(__dirname, '../db/deal_descriptions'));
 
 const PORT = 3002;
 
 // logger
-// all hits
+// all get requests
 app.use('/', (req, res, next) => {
   console.log(`globalEndPt -> Request Type: ${req.method} Request URL: ${req.originalUrl}`);
   next();
 });
-// description hits
+// description info requests
 app.use('/deal/:deal_id/description', (req, res, next) => {
-  console.log(`dealEndPt -> Request Type: ${req.method} Request URL: ${req.originalUrl}`);
+  console.log(`dealEndPt -> Req.Type: ${req.method} | Req.URL: ${req.originalUrl} | Req.param[strgfyd] ${JSON.stringify(req.params)}`);
   next();
 });
 
@@ -21,17 +23,19 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-// respond to description endpoint hits
-app.get('/deal/:deal_id/description', function (req, res, next) {
-  console.log('dealID:', req.params.deal_id)
-  next()
-}, function (req, res, next) {
-  res.send('Deal Info')
-})
+// entire table response to description endpoint hits
+app.get('/deal/table_max', (req, res, next) => {
+  db.dealTableMaxRecord((e, s) => res.send(s));
+});
 
-// handler for the /user/:id path, which prints the user ID
-app.get('/deal/:deal_id/description', function (req, res, next) {
-  res.end(req.params.deal_id)
-})
+// respond to description endpoint hits with an array containing a single object with all relevant information
+app.get('/deal/:deal_id/description', (req, res, next) => {
+  const deal_id = req.params.deal_id;
+  db.getDescriptionData(deal_id, (e, s) => res.send(s));
+});
+// if deal_id is too high, return empty array
+// if deal_id is text, console log error on server
+// deal_id MUST be number
 
-app.listen(PORT, () => console.log(`Example app listening on port ${3002}!`));
+// set server to listen
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
