@@ -38,6 +38,6 @@ npm install -g webpack
 npm install
 ```
 
-## Database Structure
+## Database Schema
 
-![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.3.png);
+![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.4.png);
