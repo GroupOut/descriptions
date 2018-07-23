@@ -14,7 +14,7 @@ app.use('/', (req, res, next) => {
 });
 // description info requests
 app.use('/deal/:deal_id/description', (req, res, next) => {
-  console.log(`dealEndPt -> Req.Type: ${req.method} | Req.URL: ${req.originalUrl} | Req.param[strgfyd] ${JSON.stringify(req.params)}`);
+  console.log(`dealDescripEndPt -> Req.Type: ${req.method} | Req.URL: ${req.originalUrl} | Req.param[strgfyd] ${JSON.stringify(req.params)}`);
   next();
 });
 
