@@ -7,7 +7,7 @@ const descriptionStyle = {
   height: '50%',
   borderStyle: 'solid',
   borderWidth: '2px',
-  textAlign: 'center',
+  textAlign: 'left',
 };
 
 export default class Description extends React.Component {
@@ -48,7 +48,7 @@ export default class Description extends React.Component {
       }
     })
       .then((response) => {
-        this.setState({ deal2: response.data[0] });
+        this.setState({ deal: response.data[0] });
       })
       .catch((error) => {
         console.log(error);
@@ -71,18 +71,72 @@ export default class Description extends React.Component {
 
         </form>
 
-        <p>
-          <strong>{this.state.deal.descrip}</strong>
-          <br />
-          <span>
-            <em>{this.state.deal.merchant}</em>
-          </span>
-          <br />
-          <span>{this.state.addl_info}</span>
+        <div className="descrip">
+          <h3>What You'll Get</h3>
+          <hr></hr>
+          <div>
+            {this.state.deal.descrip}
+          </div>
+        </div>
+        <br />
 
-          <br />
-          <span>{this.state.deal.addl_info}</span>
-        </p>
+        <div className="addl-info">
+          <h3>Additional Information</h3>
+          <div>
+            {this.state.deal.addl_info}
+          </div>
+        </div>
+        <br />
+
+        <div className="inclusions">
+          <h4>Inclusions</h4>
+          <ul>
+            <li>
+              {this.state.deal.inclusions}
+            </li>
+          </ul>
+        </div>
+        <br />
+
+        <div className="exclusions">
+          <h4>Exclusions</h4>
+          <ul>
+            <li>
+              {this.state.deal.exclusions}
+            </li>
+          </ul>
+        </div>
+        <br />
+
+        <div className="fine_print">
+          <h3>The Fine Print</h3>
+          <hr></hr>
+          <div>
+            {this.state.deal.fine_print}
+          </div>
+        </div>
+        <br />
+
+        <div className="about">
+          <h3>About {this.state.deal.merch_name}</h3>
+          <hr></hr>
+          <h5>
+            {this.state.deal.merch_name}
+            <br />
+            <a href={`https://www.google.com/search?q=${this.state.deal.merch_name} `}>Company Website</a>
+          </h5>
+
+        </div>
+        <br />
+
+        <span>
+          <em>{this.state.deal.merchant}</em>
+        </span>
+        <br />
+        <span>{this.state.addl_info}</span>
+
+        <br />
+        <span>{this.state.deal.addl_info}</span>
       </div>
     );
   }
