@@ -48,7 +48,7 @@ export default class Description extends React.Component {
       }
     })
       .then((response) => {
-        console.log(response.data[0]);
+        this.setState({ deal2: response.data[0] });
       })
       .catch((error) => {
         console.log(error);
