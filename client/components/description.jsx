@@ -3,12 +3,53 @@ import axios from 'axios';
 
 const descriptionStyle = {
   float: 'left',
-  width: '80%',
+  width: '475px',
   height: '50%',
   borderStyle: 'solid',
   borderWidth: '2px',
   textAlign: 'left',
+  padding: '10px',
+  color: '#75787b',
+  // fontSize: '10px',
+  fontFamily: 'OpenSans,Helvetica Neue,Helvetica,Tahoma,Arial,FreeSans,sans-serif',
+  fontSize: '1.4rem',
+  fontWeight: '400',
+  lineHeight: '1.5',
 };
+
+const iconStyle = {
+  float: 'left',
+  borderStyle: 'solid',
+  border: '1px solid DarkGrey',
+  padding: '7px',
+};
+
+const pinStyle = {
+  float: 'left',
+};
+
+const merchInfoStyle = {
+  float: 'left',
+  paddingLeft: '10px',
+  // marginLeft: '20px',
+}
+const merchInfoHeaderStyle = {
+  marginTop: 0,
+  marginBottom: '7px',
+}
+
+const merchLocHeaderStyle = {
+  float: 'left',
+  fontWeight: 'bold',
+  color: 'dimGrey',
+  margin: '10px',
+}
+
+const merchLocInfoStyle = {
+  fontWeight: 'normal',
+  fontSize: '14px',
+}
+
 
 export default class Description extends React.Component {
   constructor(props) {
@@ -126,18 +167,35 @@ export default class Description extends React.Component {
             <a href={`https://www.google.com/search?q=${this.state.deal.merch_name} `}>Company Website</a>
           </h5>
 
+          <img
+            style={iconStyle}
+            src="./images/store_icon.png"
+            alt="Store Icon"
+          />
+          <div style={merchInfoStyle}>
+            <h3 style={merchInfoHeaderStyle}>{this.state.deal.merch_name}</h3>
+            {this.state.deal.ttd}
+          </div>
+          <br />
+
+          <img style={pinStyle} src="./images/mapPlaceholder.png" alt="Map Image" />
+          <br />
+
+          <div style={merchInfoStyle}>
+            <img
+              style={pinStyle}
+              src="/images/pin1.png"
+              alt="Map Pin"
+            />
+            <div style={merchLocHeaderStyle}>{this.state.deal.merch_name}
+              <br />
+              <div style={merchLocInfoStyle}>
+                {`${this.state.deal.addr_ln1}, ${this.state.deal.addr_ln2}, ${this.state.deal.city}, ${this.state.deal.state_abbr} ${this.state.deal.zip}`}
+              </div>
+            </div>
+          </div>
         </div>
-        <br />
-
-        <span>
-          <em>{this.state.deal.merchant}</em>
-        </span>
-        <br />
-        <span>{this.state.addl_info}</span>
-
-        <br />
-        <span>{this.state.deal.addl_info}</span>
-      </div>
+      </div >
     );
   }
 }
