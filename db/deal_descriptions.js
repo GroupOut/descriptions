@@ -38,23 +38,25 @@ const getDescriptionData = (dealId, callback) => {
       } else {
         callback(null, result);
       }
-    },
+    }
   );
 };
+// getDescriptionData(25, (e, s) => console.log(s));
 
-getDescriptionData(25, (e, s) => console.log(s));
-
-const dealTableRecordCount = () => {
-  connection.query('SELECT * from deal', (error, results, fields) => {
-    if (error) throw error;
-    console.log('The deal table contains', results.length, 'records.');
+const dealTableMaxRecord = (callback) => {
+  connection.query('SELECT MAX(id) AS max_id FROM deal', (error, result, fields) => {
+    if (error) {
+      console.log('database query error');
+    } else {
+      callback(null, result);
+    }
   });
 };
-dealTableRecordCount();
+// dealTableMaxRecord((e, s) => console.log('The deal table contains', s[0].max_id, 'records.'));
 
-connection.end();
+// connection.end();
 
 module.exports = {
   getDescriptionData,
-  dealTableRecordCount,
+  dealTableMaxRecord,
 };
