@@ -3,18 +3,21 @@ import axios from 'axios';
 
 const descriptionStyle = {
   float: 'left',
-  width: '475px',
+  width: '600px',
   height: '50%',
   borderStyle: 'solid',
   borderWidth: '2px',
   textAlign: 'left',
   padding: '10px',
   color: '#75787b',
-  // fontSize: '10px',
   fontFamily: 'OpenSans,Helvetica Neue,Helvetica,Tahoma,Arial,FreeSans,sans-serif',
-  fontSize: '1.4rem',
+  fontSize: '14px',
   fontWeight: '400',
   lineHeight: '1.5',
+};
+
+const headerStyle = {
+  color: 'black',
 };
 
 const iconStyle = {
@@ -28,23 +31,24 @@ const pinStyle = {
   float: 'left',
 };
 
+// merchant information 
 const merchInfoStyle = {
   float: 'left',
   paddingLeft: '10px',
-  // marginLeft: '20px',
 }
 const merchInfoHeaderStyle = {
+  color: 'black',
   marginTop: 0,
   marginBottom: '7px',
 }
 
+// merchant location information (below map element)
 const merchLocHeaderStyle = {
   float: 'left',
   fontWeight: 'bold',
   color: 'dimGrey',
   margin: '10px',
 }
-
 const merchLocInfoStyle = {
   fontWeight: 'normal',
   fontSize: '14px',
@@ -113,7 +117,7 @@ export default class Description extends React.Component {
         </form>
 
         <div className="descrip">
-          <h3>What You'll Get</h3>
+          <h3 style={headerStyle}>What You'll Get</h3>
           <hr></hr>
           <div>
             {this.state.deal.descrip}
@@ -122,7 +126,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="addl-info">
-          <h3>Additional Information</h3>
+          <h3 style={headerStyle}>Additional Information</h3>
           <div>
             {this.state.deal.addl_info}
           </div>
@@ -130,7 +134,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="inclusions">
-          <h4>Inclusions</h4>
+          <h4 style={headerStyle}>Inclusions</h4>
           <ul>
             <li>
               {this.state.deal.inclusions}
@@ -140,7 +144,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="exclusions">
-          <h4>Exclusions</h4>
+          <h4 style={headerStyle}>Exclusions</h4>
           <ul>
             <li>
               {this.state.deal.exclusions}
@@ -150,7 +154,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="fine_print">
-          <h3>The Fine Print</h3>
+          <h3 style={headerStyle}>The Fine Print</h3>
           <hr></hr>
           <div>
             {this.state.deal.fine_print}
@@ -159,7 +163,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="about">
-          <h3>About {this.state.deal.merch_name}</h3>
+          <h3 style={headerStyle}>About {this.state.deal.merch_name}</h3>
           <hr></hr>
           <h5>
             {this.state.deal.merch_name}
