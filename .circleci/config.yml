@@ -8,7 +8,8 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11
-      - image: mysql:5.7
+      - image: mysql:8.0
+        command: ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
