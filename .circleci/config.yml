@@ -48,8 +48,8 @@ jobs:
         
       # run tests!
       # - run: yarn test
-      # - run: mysql -h 127.0.0.1 -u root < ./db/schema.sql
-      - run: mysql -u root < ./db/schema.sql
+      - run: mysql -h 127.0.0.1 -u root < ./db/schema.sql
+      # - run: mysql -u root < ./db/schema.sql
 
       - run:
           command: node ./server/index.js
