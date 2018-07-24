@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:8.11
       - image: mysql:8.0
-        # command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb-large-prefix=true --innodb-file-format=Barracuda
+        command: mysqld ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: true
       
@@ -31,7 +31,6 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
-      - run: ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES
       - run: sudo apt install -y mysql-client
       # - run: sudo apt-get update
       # - run: sudo apt-get install mysql-server
