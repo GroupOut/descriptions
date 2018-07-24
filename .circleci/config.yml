@@ -16,8 +16,8 @@ jobs:
       - image: mysql:5.7.22
         # command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb-large-prefix=true --innodb-file-format=Barracuda
         environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD=true
-          - MYSQL_ROOT_HOST=%
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
+          # - MYSQL_ROOT_HOST=%
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
