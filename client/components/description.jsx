@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const descriptionStyle = {
   float: 'left',
-  width: '600px',
+  width: '620px',
   height: '50%',
   borderStyle: 'solid',
   borderWidth: '2px',
@@ -17,7 +17,7 @@ const descriptionStyle = {
 };
 
 const headerStyle = {
-  color: 'black',
+  color: '#333',
 };
 
 const iconStyle = {
@@ -29,6 +29,7 @@ const iconStyle = {
 
 const pinStyle = {
   float: 'left',
+  paddingTop: '10px',
 };
 
 // merchant information 
@@ -126,7 +127,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="addl-info">
-          <h3 style={headerStyle}>Additional Information</h3>
+          <h3>Additional Information</h3>
           <div>
             {this.state.deal.addl_info}
           </div>
@@ -134,7 +135,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="inclusions">
-          <h4 style={headerStyle}>Inclusions</h4>
+          <h4>Inclusions</h4>
           <ul>
             <li>
               {this.state.deal.inclusions}
@@ -144,7 +145,7 @@ export default class Description extends React.Component {
         <br />
 
         <div className="exclusions">
-          <h4 style={headerStyle}>Exclusions</h4>
+          <h4>Exclusions</h4>
           <ul>
             <li>
               {this.state.deal.exclusions}
