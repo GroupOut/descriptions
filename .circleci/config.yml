@@ -8,6 +8,16 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
+        environment:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_USER: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_PASSWORD: 'Af234rew'
+      - image: mysql:5.7
+        # command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb-large-prefix=true --innodb-file-format=Barracuda
+        environment:
+          MYSQL_USER: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -27,7 +37,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: sudo apt install mysql-client
+      - run: sudo apt install -y mysql-client
 
       - save_cache:
           paths:
@@ -36,6 +46,9 @@ jobs:
         
       # run tests!
       # - run: yarn test
+      - run:
+          name: Mysql database
+          command: mysql -h 127.0.0.1 -u root -e < ./db/schema.sql
       - run: npm test
 
 
