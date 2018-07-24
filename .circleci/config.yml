@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: circleci/node:8.11
         # environment:
         #   MYSQL_HOST: 127.0.0.1
         #   MYSQL_USER: root
