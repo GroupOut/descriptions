@@ -27,6 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
+      - run: sudo apt install mysql-client
 
       - save_cache:
           paths:
