@@ -10,11 +10,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../public/app';
+import Description from '../client/components/description';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-// console.log(App);
+console.log(Description);
 
 configure({ adapter: new Adapter() });
 
@@ -24,9 +24,9 @@ configure({ adapter: new Adapter() });
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
-describe('<App />', () => {
+describe('a basic shallow test', () => {
   it('should render App', () => {
-    const wrapper = shallow(<App />)
+    const wrapper = shallow(<Description />)
     console.log(wrapper.debug())
   })
 })
