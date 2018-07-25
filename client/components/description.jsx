@@ -1,59 +1,60 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
-const descriptionStyle = {
-  float: 'left',
-  width: '620px',
-  height: '50%',
-  borderStyle: 'solid',
-  borderWidth: '2px',
-  textAlign: 'left',
-  padding: '10px',
-  color: '#75787b',
-  fontFamily: 'OpenSans,Helvetica Neue,Helvetica,Tahoma,Arial,FreeSans,sans-serif',
-  fontSize: '14px',
-  fontWeight: '400',
-  lineHeight: '1.5',
-};
+const DescriptionWrapper = styled.div`
+  float: left;
+  width: 620px;
+  height: 50%;
+  border-style: solid;
+  border-width: 2px;
+  text-align: left;
+  padding: 10px;
+  color: #75787b;
+  font-family: OpenSans,Helvetica Neue,Helvetica,Tahoma,Arial,FreeSans,sans-serif;
+  font-size: 14px;
+  font-eight: 400;
+  line-height: 1.5;
+`;
 
-const headerStyle = {
-  color: '#333',
-};
+const DescriptionSubcomponentHeader = styled.h3`
+  color: #333;
+`;
 
-const iconStyle = {
-  float: 'left',
-  borderStyle: 'solid',
-  border: '1px solid DarkGrey',
-  padding: '7px',
-};
+const Icon = styled.img`
+  float: left;
+  border-style: solid;
+  border: 1px solid DarkGrey;
+  padding: 7px;
+`;
 
-const pinStyle = {
-  float: 'left',
-  paddingTop: '10px',
-};
+const Pin = styled.img`
+  float: left;
+  padding-top: 10px;
+`;
 
-// merchant information 
-const merchInfoStyle = {
-  float: 'left',
-  paddingLeft: '10px',
-}
-const merchInfoHeaderStyle = {
-  color: 'black',
-  marginTop: 0,
-  marginBottom: '7px',
-}
+// merchant information
+const MerchantInformationHeader = styled.h3`
+  color: black;
+  margin-top: 0;
+  margin-bottom: 7px;
+`;
+const MerchantInformation = styled.div`
+  float: left;
+  padding-left: 10px;
+`;
 
 // merchant location information (below map element)
-const merchLocHeaderStyle = {
-  float: 'left',
-  fontWeight: 'bold',
-  color: 'dimGrey',
-  margin: '10px',
-}
-const merchLocInfoStyle = {
-  fontWeight: 'normal',
-  fontSize: '14px',
-}
+const MerchantLocationHeader = styled.div`
+  float: left;
+  font-weight: bold;
+  color: dimGrey;
+  margin: 10px;
+`;
+const MerchantLocationInformation = styled.div`
+  font-weight: normal;
+  font-size: 14px;
+`;
 
 
 export default class Description extends React.Component {
@@ -105,9 +106,25 @@ export default class Description extends React.Component {
     this.getDescripInfo(9);
   }
 
+
   render() {
+    let ExclusionsComponent;
+
+    if (this.state.deal.exclusions) {
+      ExclusionsComponent = (
+        <div className="exclusions">
+          <h4>Exclusions</h4>
+          <ul>
+            <li>
+              {this.state.deal.exclusions}
+            </li>
+          </ul>
+        </div>
+      )
+    }
+
     return (
-      <div style={descriptionStyle}>
+      <DescriptionWrapper>
         <form onSubmit={this.handleSubmit}>
           <label>
             Choose a deal:
@@ -118,7 +135,7 @@ export default class Description extends React.Component {
         </form>
 
         <div className="descrip">
-          <h3 style={headerStyle}>What You'll Get</h3>
+          <DescriptionSubcomponentHeader>What You'll Get</DescriptionSubcomponentHeader>
           <hr></hr>
           <div>
             {this.state.deal.descrip}
@@ -144,18 +161,12 @@ export default class Description extends React.Component {
         </div>
         <br />
 
-        <div className="exclusions">
-          <h4>Exclusions</h4>
-          <ul>
-            <li>
-              {this.state.deal.exclusions}
-            </li>
-          </ul>
-        </div>
+        {ExclusionsComponent}
         <br />
 
+
         <div className="fine_print">
-          <h3 style={headerStyle}>The Fine Print</h3>
+          <DescriptionSubcomponentHeader>The Fine Print</DescriptionSubcomponentHeader>
           <hr></hr>
           <div>
             {this.state.deal.fine_print}
@@ -164,43 +175,36 @@ export default class Description extends React.Component {
         <br />
 
         <div className="about">
-          <h3 style={headerStyle}>About {this.state.deal.merch_name}</h3>
+          <DescriptionSubcomponentHeader>About {this.state.deal.merch_name}</DescriptionSubcomponentHeader>
           <hr></hr>
           <h5>
             {this.state.deal.merch_name}
             <br />
             <a href={`https://www.google.com/search?q=${this.state.deal.merch_name} `}>Company Website</a>
           </h5>
-
-          <img
-            style={iconStyle}
-            src="./images/store_icon.png"
-            alt="Store Icon"
-          />
-          <div style={merchInfoStyle}>
-            <h3 style={merchInfoHeaderStyle}>{this.state.deal.merch_name}</h3>
-            {this.state.deal.ttd}
-          </div>
-          <br />
-
-          <img style={pinStyle} src="./images/mapPlaceholder.png" alt="Map Image" />
-          <br />
-
-          <div style={merchInfoStyle}>
-            <img
-              style={pinStyle}
-              src="/images/pin1.png"
-              alt="Map Pin"
-            />
-            <div style={merchLocHeaderStyle}>{this.state.deal.merch_name}
-              <br />
-              <div style={merchLocInfoStyle}>
-                {`${this.state.deal.addr_ln1}, ${this.state.deal.addr_ln2}, ${this.state.deal.city}, ${this.state.deal.state_abbr} ${this.state.deal.zip}`}
-              </div>
-            </div>
-          </div>
         </div>
-      </div >
+
+        <Icon src="./images/store_icon.png" alt="Store Icon" />
+
+        <MerchantInformation>
+          <MerchantInformationHeader>{this.state.deal.merch_name}</MerchantInformationHeader>
+          {this.state.deal.ttd}
+        </MerchantInformation>
+        <br />
+
+        <Pin src="./images/mapPlaceholder.png" alt="Map Image" />
+        <br />
+
+        <MerchantInformation>
+          <Pin src="/images/pin1.png" alt="Map Pin" />
+          <MerchantLocationHeader>{this.state.deal.merch_name}
+            <br />
+            <MerchantLocationInformation>
+              {this.state.deal.addr_ln1}, {this.state.deal.addr_ln2 ? `${this.state.deal.addr_ln2},` : ''} {this.state.deal.city}, {this.state.deal.state_abbr} {this.state.deal.zip}
+            </MerchantLocationInformation>
+          </MerchantLocationHeader>
+        </MerchantInformation>
+      </DescriptionWrapper>
     );
   }
 }
