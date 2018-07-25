@@ -21,12 +21,12 @@ const headerStyle = {
   color: '#333',
 };
 
-const iconStyle = {
-  float: 'left',
-  borderStyle: 'solid',
-  border: '1px solid DarkGrey',
-  padding: '7px',
-};
+const Icon = styled.img`
+  float: left;
+  borderStyle: solid;
+  border: 1px solid DarkGrey;
+  padding: 7px;
+`;
 
 const Pin = styled.img`
   float: left;
@@ -173,11 +173,8 @@ export default class Description extends React.Component {
             <a href={`https://www.google.com/search?q=${this.state.deal.merch_name} `}>Company Website</a>
           </h5>
 
-          <img
-            style={iconStyle}
-            src="./images/store_icon.png"
-            alt="Store Icon"
-          />
+          <Icon src="./images/store_icon.png" alt="Store Icon" />
+
           <MerchantInformation>
             <MerchantInformationHeader>{this.state.deal.merch_name}</MerchantInformationHeader>
             {this.state.deal.ttd}
@@ -197,7 +194,7 @@ export default class Description extends React.Component {
             </MerchantLocationHeader>
           </MerchantInformation>
         </div>
-      </div >
+      </div>
     );
   }
 }
