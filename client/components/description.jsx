@@ -34,15 +34,15 @@ const pinStyle = {
 };
 
 // merchant information 
-const merchInfoStyle = {
-  float: 'left',
-  paddingLeft: '10px',
-}
-const merchInfoHeaderStyle = {
-  color: 'black',
-  marginTop: 0,
-  marginBottom: '7px',
-}
+const MerchantInformationHeader = styled.h3`
+  color: black;
+  margin-top: 0;
+  margin-bottom: 7px;
+`;
+const MerchantInformation = styled.div`
+  float: left;
+  padding-left: 10px;
+`;
 
 // merchant location information (below map element)
 const MerchantLocationHeader = styled.div`
@@ -178,16 +178,16 @@ export default class Description extends React.Component {
             src="./images/store_icon.png"
             alt="Store Icon"
           />
-          <div style={merchInfoStyle}>
-            <h3 style={merchInfoHeaderStyle}>{this.state.deal.merch_name}</h3>
+          <MerchantInformation>
+            <MerchantInformationHeader>{this.state.deal.merch_name}</MerchantInformationHeader>
             {this.state.deal.ttd}
-          </div>
+          </MerchantInformation>
           <br />
 
           <img style={pinStyle} src="./images/mapPlaceholder.png" alt="Map Image" />
           <br />
 
-          <div style={merchInfoStyle}>
+          <MerchantInformation>
             <img
               style={pinStyle}
               src="/images/pin1.png"
@@ -199,7 +199,7 @@ export default class Description extends React.Component {
                 {this.state.deal.addr_ln1}, {this.state.deal.addr_ln2 ? this.state.deal.addr_ln2 : ''}, {this.state.deal.city}, {this.state.deal.state_abbr} {this.state.deal.zip}
               </MerchantLocationInformation>
             </MerchantLocationHeader>
-          </div>
+          </MerchantInformation>
         </div>
       </div >
     );
