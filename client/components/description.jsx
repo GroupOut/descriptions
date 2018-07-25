@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
 const descriptionStyle = {
   float: 'left',
@@ -44,16 +45,16 @@ const merchInfoHeaderStyle = {
 }
 
 // merchant location information (below map element)
-const merchLocHeaderStyle = {
-  float: 'left',
-  fontWeight: 'bold',
-  color: 'dimGrey',
-  margin: '10px',
-}
-const merchLocInfoStyle = {
-  fontWeight: 'normal',
-  fontSize: '14px',
-}
+const MerchantLocationHeader = styled.div`
+  float: left;
+  font-weight: bold;
+  color: dimGrey;
+  margin: 10px;
+`;
+const MerchantLocationInformation = styled.div`
+  font-weight: normal;
+  font-size: 14px;
+`;
 
 
 export default class Description extends React.Component {
@@ -192,12 +193,12 @@ export default class Description extends React.Component {
               src="/images/pin1.png"
               alt="Map Pin"
             />
-            <div style={merchLocHeaderStyle}>{this.state.deal.merch_name}
+            <MerchantLocationHeader>{this.state.deal.merch_name}
               <br />
-              <div style={merchLocInfoStyle}>
-                {`${this.state.deal.addr_ln1}, ${this.state.deal.addr_ln2}, ${this.state.deal.city}, ${this.state.deal.state_abbr} ${this.state.deal.zip}`}
-              </div>
-            </div>
+              <MerchantLocationInformation>
+                {this.state.deal.addr_ln1}, {this.state.deal.addr_ln2 ? this.state.deal.addr_ln2 : ''}, {this.state.deal.city}, {this.state.deal.state_abbr} {this.state.deal.zip}
+              </MerchantLocationInformation>
+            </MerchantLocationHeader>
           </div>
         </div>
       </div >
