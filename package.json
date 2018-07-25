@@ -19,6 +19,9 @@
     "start": "nodemon server/index.js",
     "test": "jest --coverage"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
@@ -28,6 +31,7 @@
     "styled-components": "^3.3.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.0",
