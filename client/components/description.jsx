@@ -28,12 +28,12 @@ const iconStyle = {
   padding: '7px',
 };
 
-const pinStyle = {
-  float: 'left',
-  paddingTop: '10px',
-};
+const Pin = styled.img`
+  float: left;
+  padding-top: 10px;
+`;
 
-// merchant information 
+// merchant information
 const MerchantInformationHeader = styled.h3`
   color: black;
   margin-top: 0;
@@ -184,19 +184,15 @@ export default class Description extends React.Component {
           </MerchantInformation>
           <br />
 
-          <img style={pinStyle} src="./images/mapPlaceholder.png" alt="Map Image" />
+          <Pin src="./images/mapPlaceholder.png" alt="Map Image" />
           <br />
 
           <MerchantInformation>
-            <img
-              style={pinStyle}
-              src="/images/pin1.png"
-              alt="Map Pin"
-            />
+            <Pin src="/images/pin1.png" alt="Map Pin" />
             <MerchantLocationHeader>{this.state.deal.merch_name}
               <br />
               <MerchantLocationInformation>
-                {this.state.deal.addr_ln1}, {this.state.deal.addr_ln2 ? this.state.deal.addr_ln2 : ''}, {this.state.deal.city}, {this.state.deal.state_abbr} {this.state.deal.zip}
+                {this.state.deal.addr_ln1}, {this.state.deal.addr_ln2 ? `${this.state.deal.addr_ln2},` : ''} {this.state.deal.city}, {this.state.deal.state_abbr} {this.state.deal.zip}
               </MerchantLocationInformation>
             </MerchantLocationHeader>
           </MerchantInformation>
