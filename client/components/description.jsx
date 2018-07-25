@@ -106,7 +106,23 @@ export default class Description extends React.Component {
     this.getDescripInfo(9);
   }
 
+
   render() {
+    let ExclusionsComponent;
+
+    if (this.state.deal.exclusions) {
+      ExclusionsComponent = (
+        <div className="exclusions">
+          <h4>Exclusions</h4>
+          <ul>
+            <li>
+              {this.state.deal.exclusions}
+            </li>
+          </ul>
+        </div>
+      )
+    }
+
     return (
       <DescriptionWrapper>
         <form onSubmit={this.handleSubmit}>
@@ -145,15 +161,9 @@ export default class Description extends React.Component {
         </div>
         <br />
 
-        <div className="exclusions">
-          <h4>Exclusions</h4>
-          <ul>
-            <li>
-              {this.state.deal.exclusions}
-            </li>
-          </ul>
-        </div>
+        {ExclusionsComponent}
         <br />
+
 
         <div className="fine_print">
           <DescriptionSubcomponentHeader>The Fine Print</DescriptionSubcomponentHeader>
