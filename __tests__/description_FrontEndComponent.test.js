@@ -56,4 +56,25 @@ describe('the Description Component', () => {
     expect(toJson(tree)).toMatchSnapshot()
   })
 
+
+  // describe('<Description /> mount rendering', () => {
+  //   it('h4 contains correct text', () => {
+  //     const wrapper = mount(<Description />, context: {}, attachTo: DOMElement)
+  //     expect(wrapper.find('h4').text()).toBe('Inclusions')
+  //     wrapper.unmount()
+  //   })
+  //   it('matches the snapshot', () => {
+  //     const tree = mount(<Description />)
+  //     expect(toJson(tree)).toMatchSnapshot()
+  //     wrapper.unmount()
+  //   })
+  // })
+
+  it('updates ExclusionsComponent with new State', () => {
+    const wrapper = shallow(<Description />)
+    expect(wrapper.find('.exclusions').exists()).toBe(false)
+    wrapper.setState({ deal: { exclusions: 'Must be over 42 in. tall' } })
+    expect(wrapper.find('.exclusions').exists()).toBe(true)
+  })
+
 })
