@@ -14,7 +14,7 @@ import Description from '../client/components/description';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-console.log(Description);
+// console.log(Description);
 
 configure({ adapter: new Adapter() });
 
@@ -26,7 +26,12 @@ configure({ adapter: new Adapter() });
 
 describe('a basic shallow test', () => {
   it('should render App', () => {
-    const wrapper = shallow(<Description />)
+    const wrapper = shallow(<Description />, { context: {}, disableLifecycleMethods: false })
     console.log(wrapper.debug())
+  })
+
+  it('should contain 1 form element', () => {
+    const wrapper = shallow(<Description />)
+    expect(wrapper.find('form').length).toBe(1)
   })
 })
