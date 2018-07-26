@@ -7,12 +7,10 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+      - image: circleci/node:8.11
+      - image: mysql:5.7
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/repo
 
@@ -26,15 +24,24 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm install
+      - run: yarn install
+      # start database up
+      - run: sudo apt install mysql-client
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
+      # load database
+      - run: mysql -h 127.0.0.1 -u root < ./db/schema.sql
+
+      # start server
+      - run: 
+          command: node ./server/index.js
+          background: true
+
       # run tests!
-      # - run: yarn test
-      - run: npm test
+      - run: yarn test
 
 

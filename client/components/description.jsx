@@ -106,7 +106,6 @@ export default class Description extends React.Component {
     this.getDescripInfo(9);
   }
 
-
   render() {
     let ExclusionsComponent;
 
@@ -130,7 +129,7 @@ export default class Description extends React.Component {
             Choose a deal:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
+          <input className='submitButton' type="submit" value="Submit" />
 
         </form>
 
