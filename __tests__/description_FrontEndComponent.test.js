@@ -56,25 +56,44 @@ describe('the Description Component', () => {
     expect(toJson(tree)).toMatchSnapshot()
   })
 
+})
 
-  // describe('<Description /> mount rendering', () => {
-  //   it('h4 contains correct text', () => {
-  //     const wrapper = mount(<Description />, context: {}, attachTo: DOMElement)
-  //     expect(wrapper.find('h4').text()).toBe('Inclusions')
-  //     wrapper.unmount()
-  //   })
-  //   it('matches the snapshot', () => {
-  //     const tree = mount(<Description />)
-  //     expect(toJson(tree)).toMatchSnapshot()
-  //     wrapper.unmount()
-  //   })
-  // })
-
+describe('the Description Component State Handling', () => {
   it('updates ExclusionsComponent with new State', () => {
     const wrapper = shallow(<Description />)
     expect(wrapper.find('.exclusions').exists()).toBe(false)
     wrapper.setState({ deal: { exclusions: 'Must be over 42 in. tall' } })
     expect(wrapper.find('.exclusions').exists()).toBe(true)
   })
+})
+
+describe('the Description Lifecycle & Methods', () => {
+
+  // it('has a getDescripInfo method', () => {
+  //   const wrapper = shallow(<Description />)
+  //   wrapper.setState({ deal: {} })
+  //   expect(wrapper.find('.exclusions').exists()).toBe(false)
+  //   const ReplyEffect = wrapper.instance().getDescripInfo(9)
+  //   console.log(wrapper.debug())
+  //   // console.log('---------------------------');
+  //   // console.log(ReplyEffect)
+  //   // expect(wrapper.find('.exclusions').exists()).toBe(true)
+  // })
+
+  it('calls componentDidMount', () => {
+    jest.spyOn(Description.prototype, 'componentDidMount')
+    const wrapper = shallow(<Description />)
+    expect(Description.prototype.componentDidMount.mock.calls.length).toBe(1)
+    wrapper.unmount()
+  })
+
+  it('calls getDescripInfo in ComponentDidMount', (done) => {
+    const wrapper = shallow(<Description />)
+    wrapper.instance().getDescripInfo = jest.fn()
+    wrapper.instance().componentDidMount()
+    done()
+    expect(wrapper.instance().getDescripInfo).toBeCalled()
+  })
+
 
 })
