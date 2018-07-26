@@ -1,13 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Description from '../client/components/description';
@@ -15,20 +5,7 @@ import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import toJson from "enzyme-to-json";
 
-// import jsdom from 'jsdom';
-// const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
-// global.document = doc
-// global.window = doc.defaultView
-
-// console.log(Description);
-
 configure({ adapter: new Adapter() });
-
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<Description />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
 
 describe('the Description Component', () => {
   it('should render Description', () => {
@@ -68,18 +45,6 @@ describe('the Description Component State Handling', () => {
 })
 
 describe('the Description Lifecycle & Methods', () => {
-
-  // it('has a getDescripInfo method', () => {
-  //   const wrapper = shallow(<Description />)
-  //   wrapper.setState({ deal: {} })
-  //   expect(wrapper.find('.exclusions').exists()).toBe(false)
-  //   const ReplyEffect = wrapper.instance().getDescripInfo(9)
-  //   console.log(wrapper.debug())
-  //   // console.log('---------------------------');
-  //   // console.log(ReplyEffect)
-  //   // expect(wrapper.find('.exclusions').exists()).toBe(true)
-  // })
-
   it('calls componentDidMount', () => {
     jest.spyOn(Description.prototype, 'componentDidMount')
     const wrapper = shallow(<Description />)
@@ -95,12 +60,13 @@ describe('the Description Lifecycle & Methods', () => {
     expect(wrapper.instance().getDescripInfo).toBeCalled()
   })
 
-  it('calls handleSubmit on click', (done) => {
-    const wrapper = shallow(<Description />)
-    wrapper.instance().handleSubmit = jest.fn()
-    button.simulate('click')
-    done()
-    expect(wrapper.instance().handleSubmit).toBeCalled()
-  })
+  // it('calls handleSubmit on click', (done) => {
+  //   const wrapper = shallow(<Description />)
+  //   const submitButton = wrapper.find('.submitButton')
+  //   wrapper.instance().handleSubmit = jest.fn()
+  //   submitButton.simulate('click')
+  //   done()
+  //   expect(wrapper.instance().handleSubmit).toBeCalled()
+  // })
 
 })

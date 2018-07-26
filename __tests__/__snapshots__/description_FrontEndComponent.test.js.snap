@@ -13,6 +13,7 @@ exports[`the Description Component matches the snapshot 1`] = `
       />
     </label>
     <input
+      className="submitButton"
       type="submit"
       value="Submit"
     />

@@ -17,7 +17,8 @@
     "format": "prettier --write '**/*.{js,jsx}'",
     "lint": "eslint '**/*.{js,jsx}' --quiet",
     "start": "nodemon server/index.js",
-    "test": "jest --coverage"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "jest": {
     "testEnvironment": "node"
