@@ -95,5 +95,12 @@ describe('the Description Lifecycle & Methods', () => {
     expect(wrapper.instance().getDescripInfo).toBeCalled()
   })
 
+  it('calls handleSubmit on click', (done) => {
+    const wrapper = shallow(<Description />)
+    wrapper.instance().handleSubmit = jest.fn()
+    button.simulate('click')
+    done()
+    expect(wrapper.instance().handleSubmit).toBeCalled()
+  })
 
 })
