@@ -106,7 +106,6 @@ export default class Description extends React.Component {
     this.getDescripInfo(9);
   }
 
-
   render() {
     let ExclusionsComponent;
 

@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Description Component matches the snapshot 1`] = `
+<styled.div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Choose a deal:
+      <input
+        onChange={[Function]}
+        type="text"
+      />
+    </label>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+  <div
+    className="descrip"
+  >
+    <styled.h3>
+      What You'll Get
+    </styled.h3>
+    <hr />
+    <div>
+      Kayaking Tour of the Charles River
+    </div>
+  </div>
+  <br />
+  <div
+    className="addl-info"
+  >
+    <h3>
+      Additional Information
+    </h3>
+    <div>
+      Subject to favorable weather conditions. If canceled due to poor weather, you will be given the option of an alternative date or full refund
+    </div>
+  </div>
+  <br />
+  <div
+    className="inclusions"
+  >
+    <h4>
+      Inclusions
+    </h4>
+    <ul>
+      <li />
+    </ul>
+  </div>
+  <br />
+  <br />
+  <div
+    className="fine_print"
+  >
+    <styled.h3>
+      The Fine Print
+    </styled.h3>
+    <hr />
+    <div />
+  </div>
+  <br />
+  <div
+    className="about"
+  >
+    <styled.h3>
+      About 
+    </styled.h3>
+    <hr />
+    <h5>
+      <br />
+      <a
+        href="https://www.google.com/search?q=undefined "
+      >
+        Company Website
+      </a>
+    </h5>
+  </div>
+  <styled.img
+    alt="Store Icon"
+    src="./images/store_icon.png"
+  />
+  <styled.div>
+    <styled.h3 />
+  </styled.div>
+  <br />
+  <styled.img
+    alt="Map Image"
+    src="./images/mapPlaceholder.png"
+  />
+  <br />
+  <styled.div>
+    <styled.img
+      alt="Map Pin"
+      src="/images/pin1.png"
+    />
+    <styled.div>
+      <br />
+      <styled.div>
+        , 
+         
+        , 
+         
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
