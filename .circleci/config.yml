@@ -11,7 +11,7 @@ jobs:
       - image: mysql:8.0
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          - MYSQL_NATIVE_PASSWORD: ''
+          # - MYSQL_NATIVE_PASSWORD: ''
           - MYSQL_ROOT_PASSWORD: ''
 
     working_directory: ~/repo
@@ -37,7 +37,9 @@ jobs:
         
       # load database
       # - run: sudo mysql -u root < ./db/schema.sql
-      - run: mysql -h 127.0.0.1 -u root < ./db/schema.sql
+      - run: mysql -u root 
+      - run: ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
+      # - run: mysql -h 127.0.0.1 -u root < ./db/schema.sql
 
       # start server
       - run: 
