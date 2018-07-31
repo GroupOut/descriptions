@@ -35,10 +35,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
+> Install MySQL
+> 5.7 is preferred for allowing null password services.
+> 8.0 is possible after modifications made for altering the `my_sql_native_password` as per [here](https://github.com/mysqljs/mysql/issues/1507).
+
 ```sh
 npm install -g webpack
 npm install
 ```
+
 
 ## Database Schema
 
