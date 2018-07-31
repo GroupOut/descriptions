@@ -13,14 +13,20 @@
 ## Table of Contents
 
 1.  [Usage](#Usage)
-1.  [Requirements](#requirements)
-1.  [Development](#development)
+2.  [Requirements](#requirements)
+3.  [Development](#development)
+4.  [Installation](#Installation)
+5.  [Screenshot](#Screenshot)
+6.  [Database Schema](#Database Schema)
+7.  [Database Schema](#Database Schema)
+8.  [Current Test Coverage](#Current Test Coverage)
+9.  [Circle CI Build Status](#Circle CI Build Status)
+10. [Development Workspace Screenshot](#Development Workspace Screenshot)
 
 ## Usage
 
-> Install MySQL
-> 5.7 is preferred for allowing null password services.
-> 8.0 is possible after modifications made for altering the `my_sql_native_password` as per [here](https://github.com/mysqljs/mysql/issues/1507).
+After installation below:
+  [ ] run server with `npm start`
 
 ## Requirements
 
@@ -31,13 +37,20 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
-### Installing Dependencies
+After installation below:
+  [ ] run webpack watch with `npm run build`
+  [ ] run test with `npm test`
+  [ ] run test with coverage results `npm test: coverage`
 
-From within the root directory:
 
+### Installation
+
+On local machine or in container:
 > Install MySQL
 > 5.7 is preferred for allowing null password services.
 > 8.0 is possible after modifications made for altering the `my_sql_native_password` as per [here](https://github.com/mysqljs/mysql/issues/1507).
+
+From within the root directory:
 
 ```sh
 npm install mysql-client
@@ -46,14 +59,14 @@ npm install -g webpack
 npm install
 ```
 
-
-## Database Schema
-
-![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.4.png);
-
 ## Current Screenshot
 
 ![Descriptions Page View ScreenShot](./images/currentSampleWebsiteView_v1.png)
+
+## Database Schema
+
+![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.4.png)
+
 
 ## Current Test Coverage
 
@@ -63,6 +76,7 @@ npm install
 
 ![Descriptions Build Status](./images/currentTestList_v1.png)
 
-## Sample Development Workspace
+## Development Workspace Screenshot
 
 ![Sample Trello Board](./images/trelloBoardSample.png)
+
