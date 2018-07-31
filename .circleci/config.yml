@@ -11,10 +11,7 @@ jobs:
       - image: mysql:5.7
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          # - MYSQL_ROOT_PASSWORD: ''
-          # - MYSQL_DATABASE: name_db
-          - MYSQL_USER: root
-          - MYSQL_PASSWORD: loadnow
+          - MYSQL_ROOT_PASSWORD: ''
 
     working_directory: ~/repo
 
@@ -38,7 +35,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # load database
-      - run: mysql -u root loadnow < ./db/schema.sql
+      - run: mysql -u root < ./db/schema.sql
       # - run: mysql -h 127.0.0.1 -u root < ./db/schema.sql
 
       # start server
