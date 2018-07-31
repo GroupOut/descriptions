@@ -20,7 +20,7 @@
 6.  [Database-Schema](#database-schema)
 7.  [Current-Test-Coverage](#current-test-coverage)
 8.  [Circle-CI-Build-Status](#circle-ci-build-status)
-9. [Development-Workspace-Screenshot](#development-workspace-screenshot)
+9.  [Development-Workspace-Snapshot](#development-workspace-snapshot)
 
 ## Usage
 
@@ -75,7 +75,7 @@ npm install
 
 ![Descriptions Build Status](./images/currentTestList_v1.png)
 
-## Development-Workspace-Screenshot
+## Development-Workspace-Snapshot
 
 ![Sample Trello Board](./images/trelloBoardSample.png)
 
