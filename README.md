@@ -17,10 +17,10 @@
 3.  [Development](#development)
 4.  [Installation](#Installation)
 5.  [Screenshot](#Screenshot)
-6.  [`Database Schema`](#`Database Schema`)
-7.  ['Current Test Coverage'](#'Current Test Coverage')
-8.  ["Circle CI Build Status"](#"Circle CI Build Status")
-9. [Development Workspace Screenshot](#Development Workspace Screenshot)
+6.  [Database-Schema](#Database-Schema)
+7.  [Current-Test-Coverage](#Current-Test-Coverage)
+8.  [Circle-CI-Build-Status](#Circle-CI-Build-Status)
+9. [Development-Workspace-Screenshot](#Development-Workspace-Screenshot)
 
 ## Usage
 
