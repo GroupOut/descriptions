@@ -15,12 +15,12 @@
 1.  [Usage](#Usage)
 2.  [Requirements](#requirements)
 3.  [Development](#development)
-4.  [Installation](#Installation)
-5.  [Screenshot](#Screenshot)
-6.  [Database-Schema](#Database-Schema)
-7.  [Current-Test-Coverage](#Current-Test-Coverage)
-8.  [Circle-CI-Build-Status](#Circle-CI-Build-Status)
-9. [Development-Workspace-Screenshot](#Development-Workspace-Screenshot)
+4.  [Installation](#installation)
+5.  [Screenshot](#screenshot)
+6.  [Database-Schema](#database-schema)
+7.  [Current-Test-Coverage](#current-test-coverage)
+8.  [Circle-CI-Build-Status](#circle-ci-build-status)
+9. [Development-Workspace-Screenshot](#development-workspace-screenshot)
 
 ## Usage
 
@@ -42,7 +42,7 @@ After installation below:
   [ ] run test with coverage results `npm test: coverage`
 
 
-### Installation
+## Installation
 
 On local machine or in container:
 > Install MySQL
@@ -58,24 +58,24 @@ npm install -g webpack
 npm install
 ```
 
-## Current Screenshot
+## Current-Screenshot
 
 ![Descriptions Page View ScreenShot](./images/currentSampleWebsiteView_v1.png)
 
-## Database Schema
+## Database-Schema
 
 ![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.4.png)
 
 
-## Current Test Coverage
+## Current-Test-Coverage
 
 ![Descriptions Test Coverage](./images/currentTestingState_v1.png)
 
-## Circle CI Build Status
+## Circle-CI-Build-Status
 
 ![Descriptions Build Status](./images/currentTestList_v1.png)
 
-## Development Workspace Screenshot
+## Development-Workspace-Screenshot
 
 ![Sample Trello Board](./images/trelloBoardSample.png)
 
