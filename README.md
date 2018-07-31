@@ -18,7 +18,9 @@
 
 ## Usage
 
-> Some usage instructions
+> Install MySQL
+> 5.7 is preferred for allowing null password services.
+> 8.0 is possible after modifications made for altering the `my_sql_native_password` as per [here](https://github.com/mysqljs/mysql/issues/1507).
 
 ## Requirements
 
@@ -41,3 +43,19 @@ npm install
 ## Database Schema
 
 ![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.4.png);
+
+## Current Screenshot
+
+![Descriptions Page View ScreenShot](./images/currentSampleWebsiteView_v1.png)
+
+## Current Test Coverage
+
+![Descriptions Test Coverage](./images/currentTestingState_v1.png)
+
+## Circle CI Build Status
+
+![Descriptions Build Status](./images/currentTestList_v1.png)
+
+## Sample Development Workspace
+
+![Sample Trello Board](./images/trelloBoardSample.png)
