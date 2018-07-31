@@ -40,6 +40,8 @@ From within the root directory:
 > 8.0 is possible after modifications made for altering the `my_sql_native_password` as per [here](https://github.com/mysqljs/mysql/issues/1507).
 
 ```sh
+npm install mysql-client
+mysql -u root < ./db/schema.sql
 npm install -g webpack
 npm install
 ```
