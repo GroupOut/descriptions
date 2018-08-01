@@ -64,7 +64,7 @@ export default class Description extends React.Component {
     this.state = {
       deal_id: '',
       deal: {
-        id: '1',
+        id: '0',
         merch_name: 'River Otter Tours',
         city: 'Portland',
         state_abbr: 'ME',

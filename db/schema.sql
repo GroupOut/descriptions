@@ -37,6 +37,7 @@ CREATE TABLE category (
   PRIMARY KEY (id)
 );
 
+
 -- ---
 -- fact tables
 -- ---
@@ -53,6 +54,17 @@ CREATE TABLE deal (
   PRIMARY KEY (id),
   FOREIGN KEY (merch_id) REFERENCES merchant (id),
   FOREIGN KEY (loc_id) REFERENCES location (id)
+);
+
+CREATE TABLE description (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  deal_id INTEGER UNSIGNED NOT NULL,
+  descrip_p1 TEXT,
+  descrip_p2 TEXT,
+  descrip_p3 TEXT,
+  descrip_p4 TEXT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (deal_id) REFERENCES deal (id)
 );
 
 -- ---
