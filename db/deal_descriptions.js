@@ -41,7 +41,7 @@ const getDescriptionData = (dealId, callback) => {
     }
   );
 };
-getDescriptionData(5, (e, s) => console.log(s));
+// getDescriptionData(5, (e, s) => console.log(s));
 
 const dealTableMaxRecord = (callback) => {
   connection.query('SELECT MAX(id) AS max_id FROM deal', (error, result, fields) => {
@@ -54,7 +54,7 @@ const dealTableMaxRecord = (callback) => {
 };
 // dealTableMaxRecord((e, s) => console.log('The deal table contains', s[0].max_id, 'records.'));
 
-connection.end();
+// connection.end();
 
 module.exports = {
   getDescriptionData,

@@ -103,7 +103,7 @@ export default class Description extends React.Component {
   }
 
   componentDidMount() {
-    this.getDescripInfo(9);
+    this.getDescripInfo(3);
   }
 
   render() {
