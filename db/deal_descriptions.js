@@ -48,7 +48,7 @@ const getDescriptionData = (dealId, callback) => {
     }
   );
 };
-// getDescriptionData(25, (e, s) => console.log(s));
+getDescriptionData(25, (e, s) => console.log(s));
 
 const dealTableMaxRecord = (callback) => {
   connection.query('SELECT MAX(id) AS max_id FROM deal', (error, result, fields) => {
