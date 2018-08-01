@@ -25,7 +25,7 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
-      # start database up
+      # start database client up
       - run: sudo apt install mysql-client
 
       - save_cache:

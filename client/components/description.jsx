@@ -64,9 +64,10 @@ export default class Description extends React.Component {
     this.state = {
       deal_id: '',
       deal: {
-        id: '1',
-        merchant: 'River Otter Tours',
-        location: 'Portland, ME',
+        id: '0',
+        merch_name: 'River Otter Tours',
+        city: 'Portland',
+        state_abbr: 'ME',
         descrip: 'Kayaking Tour of the Charles River',
         addl_info:
           'Subject to favorable weather conditions. If canceled due to poor weather, you will be given the option of an alternative date or full refund',
@@ -89,7 +90,7 @@ export default class Description extends React.Component {
   }
 
   getDescripInfo(deal_id) {
-    axios.get(`/deal/${deal_id}/description`, {
+    axios.get(`http://localhost:3002/deal/${deal_id}/description`, {
       params: {
         ID: deal_id,
       }
@@ -137,7 +138,18 @@ export default class Description extends React.Component {
           <DescriptionSubcomponentHeader>What You'll Get</DescriptionSubcomponentHeader>
           <hr></hr>
           <div>
-            {this.state.deal.descrip}
+            <p>
+              {this.state.deal.descrip_p1}
+            </p>
+            <p>
+              {this.state.deal.descrip_p2}
+            </p>
+            <p>
+              {this.state.deal.descrip_p3}
+            </p>
+            <p>
+              {this.state.deal.descrip_p4}
+            </p>
           </div>
         </div>
         <br />
@@ -177,8 +189,15 @@ export default class Description extends React.Component {
           <DescriptionSubcomponentHeader>About {this.state.deal.merch_name}</DescriptionSubcomponentHeader>
           <hr></hr>
           <h5>
-            {this.state.deal.merch_name}
-            <br />
+            <p>
+              {this.state.deal.about_p1}
+            </p>
+            <p>
+              {this.state.deal.about_p2}
+            </p>
+            <p>
+              {this.state.deal.about_p3}
+            </p>
             <a href={`https://www.google.com/search?q=${this.state.deal.merch_name} `}>Company Website</a>
           </h5>
         </div>
