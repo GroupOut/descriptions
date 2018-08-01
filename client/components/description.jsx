@@ -65,8 +65,9 @@ export default class Description extends React.Component {
       deal_id: '',
       deal: {
         id: '1',
-        merchant: 'River Otter Tours',
-        location: 'Portland, ME',
+        merch_name: 'River Otter Tours',
+        city: 'Portland',
+        state_abbr: 'ME',
         descrip: 'Kayaking Tour of the Charles River',
         addl_info:
           'Subject to favorable weather conditions. If canceled due to poor weather, you will be given the option of an alternative date or full refund',
@@ -89,7 +90,7 @@ export default class Description extends React.Component {
   }
 
   getDescripInfo(deal_id) {
-    axios.get(`/deal/${deal_id}/description`, {
+    axios.get(`http://localhost:3002/deal/${deal_id}/description`, {
       params: {
         ID: deal_id,
       }

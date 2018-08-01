@@ -68,12 +68,14 @@ exports[`the Description Component matches the snapshot 1`] = `
   >
     <styled.h3>
       About 
+      River Otter Tours
     </styled.h3>
     <hr />
     <h5>
+      River Otter Tours
       <br />
       <a
-        href="https://www.google.com/search?q=undefined "
+        href="https://www.google.com/search?q=River Otter Tours "
       >
         Company Website
       </a>
@@ -84,7 +86,9 @@ exports[`the Description Component matches the snapshot 1`] = `
     src="./images/store_icon.png"
   />
   <styled.div>
-    <styled.h3 />
+    <styled.h3>
+      River Otter Tours
+    </styled.h3>
   </styled.div>
   <br />
   <styled.img
@@ -98,11 +102,14 @@ exports[`the Description Component matches the snapshot 1`] = `
       src="/images/pin1.png"
     />
     <styled.div>
+      River Otter Tours
       <br />
       <styled.div>
         , 
          
+        Portland
         , 
+        ME
          
       </styled.div>
     </styled.div>
