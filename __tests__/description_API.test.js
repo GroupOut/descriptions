@@ -1,6 +1,7 @@
 import { get } from 'axios';
 
 describe('API Connection Test', () => {
+  jest.setTimeout(30000);
   it('returns info stored in the database', (done) => {
     get(`http://localhost:3002/deal/9/description`)
       .then((response) => {
