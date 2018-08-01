@@ -41,4 +41,4 @@ app.get('/deal/:deal_id/description', (req, res, next) => {
 // deal_id MUST be number
 
 // set server to listen
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}! to descriptions_server`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT} to descriptions_server.`));
