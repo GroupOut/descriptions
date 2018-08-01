@@ -138,7 +138,18 @@ export default class Description extends React.Component {
           <DescriptionSubcomponentHeader>What You'll Get</DescriptionSubcomponentHeader>
           <hr></hr>
           <div>
-            {this.state.deal.descrip}
+            <p>
+              {this.state.deal.descrip_p1}
+            </p>
+            <p>
+              {this.state.deal.descrip_p2}
+            </p>
+            <p>
+              {this.state.deal.descrip_p3}
+            </p>
+            <p>
+              {this.state.deal.descrip_p4}
+            </p>
           </div>
         </div>
         <br />
@@ -178,8 +189,15 @@ export default class Description extends React.Component {
           <DescriptionSubcomponentHeader>About {this.state.deal.merch_name}</DescriptionSubcomponentHeader>
           <hr></hr>
           <h5>
-            {this.state.deal.merch_name}
-            <br />
+            <p>
+              {this.state.deal.about_p1}
+            </p>
+            <p>
+              {this.state.deal.about_p2}
+            </p>
+            <p>
+              {this.state.deal.about_p3}
+            </p>
             <a href={`https://www.google.com/search?q=${this.state.deal.merch_name} `}>Company Website</a>
           </h5>
         </div>
