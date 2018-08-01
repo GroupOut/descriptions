@@ -12,15 +12,15 @@
 
 ## Table of Contents
 
-1.  [Usage](#Usage)
-2.  [Requirements](#requirements)
-3.  [Development](#development)
-4.  [Installation](#installation)
-5.  [Screenshot](#screenshot)
-6.  [Database-Schema](#database-schema)
-7.  [Current-Test-Coverage](#current-test-coverage)
-8.  [Circle-CI-Build-Status](#circle-ci-build-status)
-9.  [Development-Workspace-Snapshot](#development-workspace-snapshot)
+1. [Usage](#Usage)
+2. [Requirements](#requirements)
+3. [Development](#development)
+4. [Installation](#installation)
+5. [Screenshot](#screenshot)
+6. [Database-Schema](#database-schema)
+7. [Current-Test-Coverage](#current-test-coverage)
+8. [Circle-CI-Build-Status](#circle-ci-build-status)
+9. [Development-Workspace-Snapshot](#development-workspace-snapshot)
 
 ## Usage
 
@@ -64,7 +64,7 @@ npm install
 
 ## Database-Schema
 
-![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v1.4.png)
+![Descriptions Database Entity Relationship Diagram](./images/ERD_descriptionsDB-v2.0.png)
 
 
 ## Current-Test-Coverage
