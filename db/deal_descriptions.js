@@ -5,11 +5,17 @@ const connection = require(path.join(__dirname, 'index.js'));
 const getDescriptionData = (dealId, callback) => {
   connection.query(
     `
-      SELECT 
+      SELECT
         d.id deal_id,
         d.name deal_name, 
         m.name merch_name, 
-        d.descrip, 
+        m.about_p1 about_p1, 
+        m.about_p2 about_p2, 
+        m.about_p3 about_p3, 
+        ds.descrip_p1, 
+        ds.descrip_p2, 
+        ds.descrip_p3, 
+        ds.descrip_p4, 
         d.addl_info,
         d.inclusions, 
         d.exclusions, 
@@ -24,10 +30,11 @@ const getDescriptionData = (dealId, callback) => {
         l.lat,
         l.gp_id
       FROM deal d
-      INNER JOIN merchant m ON ( d.merch_id = m.id  )
-      INNER JOIN location l ON ( d.loc_id = l.id  )
-      INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
-      INNER JOIN category c ON ( dcj.cat_id = c.id  )
+      INNER JOIN merchant m ON ( d.merch_id = m.id )
+      INNER JOIN description ds ON ( ds.deal_id = d.id )
+      INNER JOIN location l ON ( d.loc_id = l.id )
+      INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id )
+      INNER JOIN category c ON ( dcj.cat_id = c.id )
       WHERE d.id = ${dealId}
       GROUP BY d.id
       ORDER BY d.id
