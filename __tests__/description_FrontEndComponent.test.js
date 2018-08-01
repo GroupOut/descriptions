@@ -7,42 +7,42 @@ import toJson from "enzyme-to-json";
 
 configure({ adapter: new Adapter() });
 
-// describe('the Description Component', () => {
-//   it('should render Description', () => {
-//     const wrapper = shallow(<Description />, { context: {}, disableLifecycleMethods: false })
-//     // console.log(wrapper.debug())
-//   })
+describe('the Description Component', () => {
+  it('should render Description', () => {
+    const wrapper = shallow(<Description />, { context: {}, disableLifecycleMethods: false })
+    // console.log(wrapper.debug())
+  })
 
-//   it('should contain 1 form element', () => {
-//     const wrapper = shallow(<Description />)
-//     expect(wrapper.find('form').length).toBe(1)
-//   })
+  it('should contain 1 form element', () => {
+    const wrapper = shallow(<Description />)
+    expect(wrapper.find('form').length).toBe(1)
+  })
 
-//   it('should contain 1 Description Wrapper', () => {
-//     const wrapper = shallow(<Description />)
-//     expect(wrapper.find('.descrip').exists()).toBe(true)
-//   })
+  it('should contain 1 Description Wrapper', () => {
+    const wrapper = shallow(<Description />)
+    expect(wrapper.find('.descrip').exists()).toBe(true)
+  })
 
-//   it('should contain 8 divs', () => {
-//     const wrapper = shallow(<Description />)
-//     expect(wrapper.find('div').length).toBe(8)
-//   })
+  it('should contain 8 divs', () => {
+    const wrapper = shallow(<Description />)
+    expect(wrapper.find('div').length).toBe(8)
+  })
 
-//   it('matches the snapshot', () => {
-//     const tree = shallow(<Description />)
-//     expect(toJson(tree)).toMatchSnapshot()
-//   })
+  it('matches the snapshot', () => {
+    const tree = shallow(<Description />)
+    expect(toJson(tree)).toMatchSnapshot()
+  })
 
-// })
+})
 
-// describe('the Description Component State Handling', () => {
-//   it('updates ExclusionsComponent with new State', () => {
-//     const wrapper = shallow(<Description />)
-//     expect(wrapper.find('.exclusions').exists()).toBe(false)
-//     wrapper.setState({ deal: { exclusions: 'Must be over 42 in. tall' } })
-//     expect(wrapper.find('.exclusions').exists()).toBe(true)
-//   })
-// })
+describe('the Description Component State Handling', () => {
+  it('updates ExclusionsComponent with new State', () => {
+    const wrapper = shallow(<Description />)
+    expect(wrapper.find('.exclusions').exists()).toBe(false)
+    wrapper.setState({ deal: { exclusions: 'Must be over 42 in. tall' } })
+    expect(wrapper.find('.exclusions').exists()).toBe(true)
+  })
+})
 
 describe('the Description Lifecycle & Methods', () => {
   it('calls componentDidMount', () => {
