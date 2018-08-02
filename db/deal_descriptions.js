@@ -15,14 +15,14 @@ const getDescriptionData = (dealId, callback) => {
       d.exclusions, 
       d.fine_print,
         -- GROUP_CONCAT (c.name SEPARATOR ', ') ttd,
-        -- l.addr_ln1, 
-        -- l.addr_ln2, 
-        -- l.city,
-        -- l.state_abbr,
-      l.zip
-        -- l.lon,
-        -- l.lat,
-        -- l.gp_id
+      l.addr_ln1, 
+      l.addr_ln2, 
+      l.city,
+      l.state_abbr,
+      l.zip,
+      l.lon,
+      l.lat,
+      l.gp_id
       FROM deal d
       INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
       INNER JOIN merchant m ON ( d.merch_id = m.id  )
