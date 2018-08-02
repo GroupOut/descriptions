@@ -1,6 +1,6 @@
 import { get } from 'axios';
 
-describe('API Connection Test', () => {
+describe('API-Connection-Test', () => {
   it('returns info stored in the database', (done) => {
     get(`http://localhost:3002/deal/5/description`)
       .then((response) => {
