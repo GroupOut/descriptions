@@ -26,7 +26,7 @@ const getDescriptionData = (dealId, callback) => {
       FROM deal d
       INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
       -- INNER JOIN merchant m ON ( d.merch_id = m.id  )
-      INNER JOIN location l ON ( d.loc_id = l.id  )
+      -- INNER JOIN location l ON ( d.loc_id = l.id  )
       -- INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
       -- INNER JOIN category c ON ( dcj.cat_id = c.id  )
       WHERE d.id = ${dealId}
@@ -42,7 +42,7 @@ const getDescriptionData = (dealId, callback) => {
     }
   );
 };
-// getDescriptionData(5, (e, s) => console.log(s));
+getDescriptionData(5, (e, s) => console.log(s));
 
 const dealTableMaxRecord = (callback) => {
   connection.query('SELECT MAX(id) AS max_id FROM deal', (error, result, fields) => {
