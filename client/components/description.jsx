@@ -210,7 +210,7 @@ export default class Description extends React.Component {
         </MerchantInformation>
         <br />
 
-        <Pin src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.deal.lat},${this.state.deal.lon}&zoom=5&size=620x320&maptype=roadmap&markers=color:green%7Clabel:G%7C${this.state.deal.lat},${this.state.deal.lon}&key=AIzaSyDJRptaWJYjsFgRiqxpXKxdv6ZhZnoVmDc`} alt="Map Image" />
+        <Pin src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&zoom=12&size=620x320&maptype=roadmap&markers=color:green%7Clabel:1%7C${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&key=AIzaSyDJRptaWJYjsFgRiqxpXKxdv6ZhZnoVmDc`} alt="Map Image" />
         <br />
 
         <MerchantInformation>
