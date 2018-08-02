@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import GoogleMapConfig from '../config/googlemap';
 
 const DescriptionWrapper = styled.div`
   float: left;
@@ -72,6 +73,7 @@ export default class Description extends React.Component {
         addl_info:
           'Subject to favorable weather conditions. If canceled due to poor weather, you will be given the option of an alternative date or full refund',
       },
+      apiKey: GoogleMapConfig.apiKey,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -210,7 +212,7 @@ export default class Description extends React.Component {
         </MerchantInformation>
         <br />
 
-        <Pin src="./images/mapPlaceholder.png" alt="Map Image" />
+        <Pin src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.deal.city},${this.state.deal.state_abbr}&visible=${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&size=620x320&maptype=roadmap&markers=color:green%7Clabel:1%7C${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&key=${this.state.apiKey}`} alt="Map Image" />
         <br />
 
         <MerchantInformation>
