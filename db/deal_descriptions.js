@@ -6,16 +6,16 @@ const getDescriptionData = (dealId, callback) => {
   connection.query(
     `
       SELECT
-      d.id deal_id,
-      d.name deal_name, 
-  --  m.name merch_name, 
-  --  ds.descrip_p1 descrip, 
-  --    d.addl_info,
-  --    d.inclusions, 
-  --    d.exclusions, 
-  --    d.fine_print,
-  c.name cat
-  --    GROUP_CONCAT (c.name SEPARATOR ', ') ttd
+    d.id deal_id,
+    d.name deal_name, 
+    m.name merch_name, 
+    ds.descrip_p1 descrip, 
+    d.addl_info,
+    d.inclusions, 
+    d.exclusions, 
+    d.fine_print,
+    c.name
+  --  GROUP_CONCAT (c.name SEPARATOR ', ') ttd
   --    l.addr_ln1, 
   --    l.addr_ln2, 
   --    l.city,
@@ -26,13 +26,13 @@ const getDescriptionData = (dealId, callback) => {
   --    l.gp_id
       FROM deal d
       INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
-  --    INNER JOIN merchant m ON ( d.merch_id = m.id  )
+      INNER JOIN merchant m ON ( d.merch_id = m.id  )
   --    INNER JOIN location l ON ( d.loc_id = l.id  )
       INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
       INNER JOIN category c ON ( dcj.cat_id = c.id  )
-      WHERE d.id = ${dealId}
-      GROUP BY d.id
-      ORDER BY d.id
+    WHERE d.id = ${dealId}
+    -- GROUP BY d.id
+    --  ORDER BY d.id
   ;`,
     (error, result, fields) => {
       if (error) {
