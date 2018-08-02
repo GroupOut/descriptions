@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 describe('the Description Component', () => {
   it('should render Description', () => {
     const wrapper = shallow(<Description />, { context: {}, disableLifecycleMethods: false })
-    console.log(wrapper.debug())
+    // console.log(wrapper.debug())
   })
 
   it('should contain 1 form element', () => {
