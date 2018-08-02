@@ -14,25 +14,25 @@ const getDescriptionData = (dealId, callback) => {
     d.inclusions, 
     d.exclusions, 
     d.fine_print,
-    c.name
+    c.name,
   --  GROUP_CONCAT (c.name SEPARATOR ', ') ttd
-  --    l.addr_ln1, 
-  --    l.addr_ln2, 
-  --    l.city,
-  --    l.state_abbr,
-  --    l.zip,
-  --    l.lon,
-  --    l.lat,
-  --    l.gp_id
+    l.addr_ln1, 
+    l.addr_ln2, 
+    l.city,
+    l.state_abbr,
+    l.zip,
+    l.lon,
+    l.lat,
+    l.gp_id
       FROM deal d
       INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
       INNER JOIN merchant m ON ( d.merch_id = m.id  )
-  --    INNER JOIN location l ON ( d.loc_id = l.id  )
+      INNER JOIN location l ON ( d.loc_id = l.id  )
       INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
       INNER JOIN category c ON ( dcj.cat_id = c.id  )
     WHERE d.id = ${dealId}
-    -- GROUP BY d.id
-    --  ORDER BY d.id
+    GROUP BY d.id
+    ORDER BY d.id
   ;`,
     (error, result, fields) => {
       if (error) {
