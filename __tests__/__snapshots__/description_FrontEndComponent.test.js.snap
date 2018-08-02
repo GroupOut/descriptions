@@ -97,7 +97,7 @@ exports[`the Description Component matches the snapshot 1`] = `
   <br />
   <styled.img
     alt="Map Image"
-    src="./images/mapPlaceholder.png"
+    src="https://maps.googleapis.com/maps/api/staticmap?center=Portland,ME&visible=undefined,Portland,ME&size=620x320&maptype=roadmap&markers=color:green%7Clabel:1%7Cundefined,Portland,ME&key=AIzaSyCp8wEuJxlja1rywLhtUioaBk_RgP0O4nI"
   />
   <br />
   <styled.div>
