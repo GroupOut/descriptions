@@ -30,8 +30,8 @@ const getDescriptionData = (dealId, callback) => {
       INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
       INNER JOIN category c ON ( dcj.cat_id = c.id  )
       WHERE d.id = ${dealId}
-      -- GROUP BY d.id
-      -- ORDER BY d.id
+      GROUP BY d.id
+      ORDER BY d.id
   ;`,
     (error, result, fields) => {
       if (error) {
