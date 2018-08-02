@@ -7,14 +7,14 @@ const getDescriptionData = (dealId, callback) => {
     `
       SELECT
       d.id deal_id,
-  --    d.name deal_name, 
+      d.name deal_name, 
   --    m.name merch_name, 
-  --    ds.descrip_p1 descrip, 
+      ds.descrip_p1 descrip, 
   --    d.addl_info,
   --    d.inclusions, 
   --    d.exclusions, 
   --    d.fine_print,
-        GROUP_CONCAT (c.name SEPARATOR ', ') ttd,
+      GROUP_CONCAT (c.name SEPARATOR ', ') ttd
   --    l.addr_ln1, 
   --    l.addr_ln2, 
   --    l.city,
@@ -24,7 +24,7 @@ const getDescriptionData = (dealId, callback) => {
   --    l.lat,
   --    l.gp_id
       FROM deal d
-  --    INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
+      INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
   --    INNER JOIN merchant m ON ( d.merch_id = m.id  )
   --    INNER JOIN location l ON ( d.loc_id = l.id  )
       INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
@@ -42,7 +42,7 @@ const getDescriptionData = (dealId, callback) => {
     }
   );
 };
-// getDescriptionData(5, (e, s) => console.log(s));
+getDescriptionData(4, (e, s) => console.log(s));
 
 const dealTableMaxRecord = (callback) => {
   connection.query('SELECT MAX(id) AS max_id FROM deal', (error, result, fields) => {
@@ -55,7 +55,7 @@ const dealTableMaxRecord = (callback) => {
 };
 // dealTableMaxRecord((e, s) => console.log('The deal table contains', s[0].max_id, 'records.'));
 
-// connection.end();
+connection.end();
 
 module.exports = {
   getDescriptionData,
