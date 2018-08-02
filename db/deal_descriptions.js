@@ -14,7 +14,7 @@ const getDescriptionData = (dealId, callback) => {
   --    d.inclusions, 
   --    d.exclusions, 
   --    d.fine_print,
-  c.name
+  c.name cat
   --    GROUP_CONCAT (c.name SEPARATOR ', ') ttd
   --    l.addr_ln1, 
   --    l.addr_ln2, 
