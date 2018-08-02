@@ -27,4 +27,6 @@ dist/
 # Sample Directories
 example/
 
+## API keys ##
+client/config/googlemap.js
 
