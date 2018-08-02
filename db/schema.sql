@@ -61,6 +61,7 @@ CREATE TABLE whatyoullget (
   PRIMARY KEY (id),
   FOREIGN KEY (deal_id) REFERENCES deal (id)
 );
+
 -- ---
 -- join tables
 -- ---
