@@ -216,7 +216,7 @@ export default class Description extends React.Component {
         <br />
 
         <MerchantInformation>
-          <Pin src="/images/pin1.png" alt="Map Pin" />
+          <Pin src="./images/pinGreen.png" alt="Map Pin" />
           <MerchantLocationHeader>{this.state.deal.merch_name}
             <br />
             <MerchantLocationInformation>
