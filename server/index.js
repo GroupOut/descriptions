@@ -34,8 +34,8 @@ app.get('/deal/table_max', (req, res, next) => {
 // respond to description endpoint hits with an array containing a single object with all relevant information
 app.get('/deal/:deal_id/description', (req, res, next) => {
   const deal_id = req.params.deal_id;
-  db.getDescriptionData(deal_id, (e, s) => console.log(s));
-  // db.getDescriptionData(deal_id, (e, s) => res.send(s));
+  // db.getDescriptionData(deal_id, (e, s) => console.log(s));
+  db.getDescriptionData(deal_id, (e, s) => res.send(s));
 });
 // if deal_id is too high, return empty array
 // if deal_id is text, console log error on server
