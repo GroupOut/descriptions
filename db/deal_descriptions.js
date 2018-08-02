@@ -9,7 +9,7 @@ const getDescriptionData = (dealId, callback) => {
     d.id deal_id,
     d.name deal_name, 
     m.name merch_name, 
-    -- ds.descrip_p1 descrip, 
+    ds.descrip_p1 descrip, 
     d.addl_info,
     d.inclusions, 
     d.exclusions, 
