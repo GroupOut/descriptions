@@ -24,7 +24,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm install
+      - run: yarn install
       # start database client up
       - run: sudo apt install mysql-client
 
@@ -42,6 +42,6 @@ jobs:
           background: true
 
       # run tests!
-      - run: npm test
+      - run: yarn test
 
 
