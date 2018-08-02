@@ -210,7 +210,7 @@ export default class Description extends React.Component {
         </MerchantInformation>
         <br />
 
-        <Pin src="./images/mapPlaceholder.png" alt="Map Image" />
+        <Pin src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:green%7Clabel:G%7C40.711614,-74.012318&key=AIzaSyDJRptaWJYjsFgRiqxpXKxdv6ZhZnoVmDc" alt="Map Image" />
         <br />
 
         <MerchantInformation>
