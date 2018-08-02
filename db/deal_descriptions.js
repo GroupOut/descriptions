@@ -10,11 +10,11 @@ const getDescriptionData = (dealId, callback) => {
       d.name deal_name, 
       m.name merch_name, 
       ds.descrip_p1 descrip, 
-      --  d.addl_info,
-      --  d.inclusions, 
-      --  d.exclusions, 
-      --  d.fine_print
-        -- GROUP_CONCAT (c.name SEPARATOR ', ') ttd,
+      d.addl_info,
+      d.inclusions, 
+      d.exclusions, 
+      d.fine_print
+      GROUP_CONCAT (c.name SEPARATOR ', ') ttd,
         -- l.addr_ln1, 
         -- l.addr_ln2, 
         -- l.city,
