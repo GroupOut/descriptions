@@ -26,9 +26,9 @@ const getDescriptionData = (dealId, callback) => {
       FROM deal d
       INNER JOIN whatyoullget ds ON ( ds.deal_id = d.id  )
       INNER JOIN merchant m ON ( d.merch_id = m.id  )
-      -- INNER JOIN location l ON ( d.loc_id = l.id  )
-      -- INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
-      -- INNER JOIN category c ON ( dcj.cat_id = c.id  )
+      INNER JOIN location l ON ( d.loc_id = l.id  )
+      INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
+      INNER JOIN category c ON ( dcj.cat_id = c.id  )
       WHERE d.id = ${dealId}
       -- GROUP BY d.id
       -- ORDER BY d.id
