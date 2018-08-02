@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import googlemap from '../config/googlemap';
+import GoogleMapConfig from '../config/googlemap';
 
 const DescriptionWrapper = styled.div`
   float: left;
@@ -73,7 +73,7 @@ export default class Description extends React.Component {
         addl_info:
           'Subject to favorable weather conditions. If canceled due to poor weather, you will be given the option of an alternative date or full refund',
       },
-      apiKey: googlemap.apiKey,
+      apiKey: GoogleMapConfig.apiKey,
     };
 
     this.handleChange = this.handleChange.bind(this);
