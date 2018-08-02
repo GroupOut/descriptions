@@ -9,7 +9,7 @@ const getDescriptionData = (dealId, callback) => {
         d.id deal_id,
         d.name deal_name, 
         m.name merch_name, 
-        -- d.descrip, 
+        ds.descrip_p1, 
         d.addl_info,
         d.inclusions, 
         d.exclusions, 
@@ -24,6 +24,7 @@ const getDescriptionData = (dealId, callback) => {
         l.lat,
         l.gp_id
       FROM deal d
+      INNER JOIN description ds ON ( ds.deal_id = d.id  )
       INNER JOIN merchant m ON ( d.merch_id = m.id  )
       INNER JOIN location l ON ( d.loc_id = l.id  )
       INNER JOIN deal_cat_join dcj ON ( d.id = dcj.deal_id  )  
