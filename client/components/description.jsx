@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import GoogleMapConfig from '../config/googlemap';
+import $ from 'jquery';
 
 const DescriptionWrapper = styled.div`
   float: left;
@@ -106,7 +107,11 @@ export default class Description extends React.Component {
   }
 
   componentDidMount() {
-    this.getDescripInfo(9);
+    let idParam = window.location.pathname.split('/')[2];
+    console.log(idParam)
+    if (idParam !== '') {
+      this.getDescripInfo(9);
+    }
   }
 
   render() {
@@ -212,7 +217,7 @@ export default class Description extends React.Component {
         </MerchantInformation>
         <br />
 
-        <Pin src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.deal.city},${this.state.deal.state_abbr}&visible=${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&size=620x320&maptype=roadmap&markers=color:green%7Clabel:1%7C${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&key=${this.state.apiKey}`} alt="Map Image" />
+        <Pin src={(this.state.apiKey) ? `https://maps.googleapis.com/maps/api/staticmap?center=${this.state.deal.city},${this.state.deal.state_abbr}&visible=${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&size=620x320&maptype=roadmap&markers=color:green%7Clabel:1%7C${this.state.deal.addr_ln1},${this.state.deal.city},${this.state.deal.state_abbr}&key=${this.state.apiKey}` : `./images/mapPlaceholder.PNG`} alt="Map Image" />
         <br />
 
         <MerchantInformation>
