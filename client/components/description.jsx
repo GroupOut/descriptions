@@ -92,25 +92,47 @@ export default class Description extends React.Component {
     e.target.reset();
   }
 
-  getDescripInfo(deal_id) {
-    axios.get(`http://localhost:3002/deal/${deal_id}/description`, {
-      params: {
-        ID: deal_id,
+  // getDescripInfo(deal_id) {
+  //   axios.get(`http://localhost:3002/deal/${deal_id}/description`, {
+  //     params: {
+  //       ID: deal_id,
+  //     }
+  //   })
+  //     .then((response) => {
+  //       this.setState({ deal: response.data[0] });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }
+
+  getReviewsForDeal(dealId) {
+    let that = this;
+    $.ajax({
+      url: `http://localhost:3002/deal/${dealId}/description`,
+      type: 'GET',
+      success: (data) => {
+        if (data.length !== 0) {
+          that.setState({ deal: response.data[0] });
+        }
       }
-    })
-      .then((response) => {
-        this.setState({ deal: response.data[0] });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    });
   }
 
   componentDidMount() {
-    let idParam = window.location.pathname.split('/')[2];
-    console.log(idParam)
-    if (idParam !== '') {
-      this.getDescripInfo(9);
+    let context = this;
+    let locSplit = window.location.pathname.split('/');
+    let idParam;
+    for (let i = 0; i < locSplit.length; i++) {
+      if (locSplit[i] === 'deals') {
+        idParam = parseInt(locSplit[i + 1])
+      }
+    }
+
+    if (typeof idParam === 'number') {
+      if (idParam > 0 && idParam < 101) {
+        this.getDescripInfo(idArr);
+      }
     }
   }
 

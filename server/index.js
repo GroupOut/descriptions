@@ -18,12 +18,16 @@ app.use('/deal/:deal_id/description', (req, res, next) => {
   next();
 });
 
-// serve static page
-app.use(express.static(path.join(__dirname, '../public')));
+// // serve static page (originally)
+// app.use(express.static(path.join(__dirname, '../public')));
 
-// respond to global endpoint hits
-app.get('/', (req, res) => {
-  res.send('Hello World');
+/* added the GET/app.js API call in below as found similarly in Alec's server API library.
+My bundle.js file doesn't get expressed properly this way unfortunately, and also I am serving the logos and images on the page from an associate public/image file.
+Find above, the static serving API call that was working before if this is helpful.
+*/
+// respond to global endpoint app.js request
+app.get('/app.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/bundle.js'))
 });
 
 // entire table response to description endpoint hits
