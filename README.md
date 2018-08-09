@@ -82,4 +82,4 @@ npm install
 
 ## Collected-Team-Components-Snapshot
 
-![Collected Team Components Snapshot](./images/AllComponentsDisplayedOnProxy.png)
+![Collected Team Components Snapshot](./images/AllComponentsDisplayedOnProxy.PNG)
