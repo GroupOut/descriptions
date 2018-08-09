@@ -78,4 +78,3 @@ npm install
 ## Development-Workspace-Snapshot
 
 ![Sample Trello Board](./images/trelloBoardSample.png)
-

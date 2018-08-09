@@ -106,38 +106,6 @@ export default class Description extends React.Component {
       });
   }
 
-  // Alec version
-  // getReviewsForDeal(dealId) {
-  //   let that = this;
-  //   $.ajax({
-  //     url: `http://localhost:3002/deal/${dealId}/description`,
-  //     type: 'GET',
-  //     success: (data) => {
-  //       if (data.length !== 0) {
-  //         that.setState({ deal: response.data[0] });
-  //       }
-  //     }
-  //   });
-  // }
-
-  // Nolsky version
-  // componentWillMount() {
-  //   let context = this;
-  //   let locSplit = window.location.pathname.split('/');
-  //   let idParam;
-  //   for (let i = 0; i < locSplit.length; i++) {
-  //     if (locSplit[i] === 'deals') {
-  //       idParam = parseInt(locSplit[i + 1])
-  //     }
-  //   }
-
-  //   if (typeof idParam === 'number') {
-  //     if (idParam > 0 && idParam < 101) {
-  //       this.getDescripInfo(idArr);
-  //     }
-  //   }
-  // }
-
   componentWillMount() {
     let deal_id = location.pathname.split('/')[2];
     console.log('id', deal_id);
