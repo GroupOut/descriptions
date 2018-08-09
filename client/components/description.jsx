@@ -106,13 +106,12 @@ export default class Description extends React.Component {
       });
   }
 
-  componentDidMount() {
-    let idParam = window.location.pathname.split('/')[2];
-    console.log(idParam)
-    if (idParam !== '') {
-      this.getDescripInfo(9);
-    }
+  componentWillMount() {
+    let deal_id = location.pathname.split('/')[2];
+    console.log('id', deal_id);
+    this.getDescripInfo(deal_id);
   }
+
 
   render() {
     let ExclusionsComponent;
