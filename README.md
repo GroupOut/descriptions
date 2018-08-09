@@ -16,11 +16,12 @@
 2. [Requirements](#requirements)
 3. [Development](#development)
 4. [Installation](#installation)
-5. [Screenshot](#screenshot)
+5. [Descriptions-Component-Screenshot](#descriptions-component-screenshot)
 6. [Database-Schema](#database-schema)
 7. [Current-Test-Coverage](#current-test-coverage)
 8. [Circle-CI-Build-Status](#circle-ci-build-status)
 9. [Development-Workspace-Snapshot](#development-workspace-snapshot)
+10. [Collected-Team-Components-Snapshot](#collected-team-components-snapshot)
 
 ## Usage
 
@@ -58,7 +59,7 @@ npm install -g webpack
 npm install
 ```
 
-## Current-Screenshot
+## Descriptions-Component-Screenshot
 
 ![Descriptions Page View ScreenShot](./images/currentSampleWebsiteView_v1.png)
 
@@ -78,3 +79,7 @@ npm install
 ## Development-Workspace-Snapshot
 
 ![Sample Trello Board](./images/trelloBoardSample.png)
+
+## Collected-Team-Components-Snapshot
+
+![Collected Team Components Snapshot](./images/AllComponentsDisplayedOnProxy.png)
